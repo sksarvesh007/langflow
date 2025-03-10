@@ -16,7 +16,8 @@
             "fieldName": "data",
             "id": "ParseData-BbvKb",
             "inputTypes": [
-              "Data"
+              "Data",
+              "JSON"
             ],
             "type": "other"
           }
@@ -26,7 +27,7 @@
         "source": "File-GwJQZ",
         "sourceHandle": "{œdataTypeœ: œFileœ, œidœ: œFile-GwJQZœ, œnameœ: œdataœ, œoutput_typesœ: [œDataœ]}",
         "target": "ParseData-BbvKb",
-        "targetHandle": "{œfieldNameœ: œdataœ, œidœ: œParseData-BbvKbœ, œinputTypesœ: [œDataœ], œtypeœ: œotherœ}"
+        "targetHandle": "{œfieldNameœ: œdataœ, œidœ: œParseData-BbvKbœ, œinputTypesœ: [œDataœ, œJSONœ], œtypeœ: œotherœ}"
       },
       {
         "className": "",
@@ -814,7 +815,8 @@
                 "dynamic": false,
                 "info": "The data to convert to text.",
                 "input_types": [
-                  "Data"
+                  "Data",
+                  "JSON"
                 ],
                 "list": true,
                 "name": "data",

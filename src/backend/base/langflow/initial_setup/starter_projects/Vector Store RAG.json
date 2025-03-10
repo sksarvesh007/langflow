@@ -185,7 +185,8 @@
             "fieldName": "ingest_data",
             "id": "AstraDB-PEjRy",
             "inputTypes": [
-              "Data"
+              "Data",
+              "JSON"
             ],
             "type": "other"
           }
@@ -194,7 +195,7 @@
         "source": "SplitText-vaZeR",
         "sourceHandle": "{œdataTypeœ: œSplitTextœ, œidœ: œSplitText-vaZeRœ, œnameœ: œchunksœ, œoutput_typesœ: [œDataœ]}",
         "target": "AstraDB-PEjRy",
-        "targetHandle": "{œfieldNameœ: œingest_dataœ, œidœ: œAstraDB-PEjRyœ, œinputTypesœ: [œDataœ], œtypeœ: œotherœ}"
+        "targetHandle": "{œfieldNameœ: œingest_dataœ, œidœ: œAstraDB-PEjRyœ, œinputTypesœ: [œDataœ, œJSONœ], œtypeœ: œotherœ}"
       },
       {
         "data": {
@@ -260,7 +261,8 @@
             "fieldName": "data",
             "id": "ParseData-dTUtn",
             "inputTypes": [
-              "Data"
+              "Data",
+              "JSON"
             ],
             "type": "other"
           }
@@ -269,7 +271,7 @@
         "source": "AstraDB-hkfZY",
         "sourceHandle": "{œdataTypeœ: œAstraDBœ, œidœ: œAstraDB-hkfZYœ, œnameœ: œsearch_resultsœ, œoutput_typesœ: [œDataœ]}",
         "target": "ParseData-dTUtn",
-        "targetHandle": "{œfieldNameœ: œdataœ, œidœ: œParseData-dTUtnœ, œinputTypesœ: [œDataœ], œtypeœ: œotherœ}"
+        "targetHandle": "{œfieldNameœ: œdataœ, œidœ: œParseData-dTUtnœ, œinputTypesœ: [œDataœ, œJSONœ], œtypeœ: œotherœ}"
       }
     ],
     "nodes": [
@@ -642,7 +644,8 @@
                 "dynamic": false,
                 "info": "The data to convert to text.",
                 "input_types": [
-                  "Data"
+                  "Data",
+                  "JSON"
                 ],
                 "list": true,
                 "name": "data",
@@ -3745,7 +3748,8 @@
                 "dynamic": false,
                 "info": "",
                 "input_types": [
-                  "Data"
+                  "Data",
+                  "JSON"
                 ],
                 "list": false,
                 "list_add_label": "Add More",
@@ -4441,7 +4445,8 @@
                 "dynamic": false,
                 "info": "",
                 "input_types": [
-                  "Data"
+                  "Data",
+                  "JSON"
                 ],
                 "list": false,
                 "list_add_label": "Add More",
