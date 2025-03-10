@@ -1094,7 +1094,8 @@
                 "selected": "Data",
                 "tool_mode": true,
                 "types": [
-                  "Data"
+                  "Data",
+                  "JSON"
                 ],
                 "value": "__UNDEFINED__"
               }
