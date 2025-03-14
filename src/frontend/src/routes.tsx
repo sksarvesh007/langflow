@@ -23,6 +23,7 @@ import LoginPage from "./pages/LoginPage";
 import CollectionPage from "./pages/MainPage/pages";
 import HomePage from "./pages/MainPage/pages/homePage";
 import SettingsPage from "./pages/SettingsPage";
+import LLMSettingsPage from "./pages/SettingsPage/LLMSettingsPage";
 import ApiKeysPage from "./pages/SettingsPage/pages/ApiKeysPage";
 import GeneralPage from "./pages/SettingsPage/pages/GeneralPage";
 import GlobalVariablesPage from "./pages/SettingsPage/pages/GlobalVariablesPage";
@@ -103,6 +104,7 @@ const router = createBrowserRouter(
                     path="global-variables"
                     element={<GlobalVariablesPage />}
                   />
+                  <Route path="llm-settings" element={<LLMSettingsPage />} />
                   <Route path="api-keys" element={<ApiKeysPage />} />
                   <Route
                     path="general/:scrollId?"
