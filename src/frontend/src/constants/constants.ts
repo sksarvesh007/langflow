@@ -164,7 +164,7 @@ export const FLOW_NOT_BUILT_DESCRIPTION =
  * The base text for subtitle of Text Dialog
  * @constant
  */
-export const TEXT_DIALOG_SUBTITLE = "Edit text content.";
+export const TEXT_DIALOG_TITLE = "Edit text content";
 
 /**
  * The base text for subtitle of Import Dialog
@@ -570,6 +570,8 @@ export const ADMIN_HEADER_DESCRIPTION =
 
 export const BASE_URL_API = custom.BASE_URL_API || "/api/v1/";
 
+export const BASE_URL_API_V2 = custom.BASE_URL_API_V2 || "/api/v2/";
+
 /**
  * URLs excluded from error retries.
  * @constant
@@ -870,11 +872,6 @@ export const defaultShortcuts = [
   },
   {
     display_name: "Freeze",
-    name: "Freeze",
-    shortcut: "mod+f",
-  },
-  {
-    display_name: "Freeze Path",
     name: "Freeze Path",
     shortcut: "mod+shift+f",
   },
@@ -1009,9 +1006,17 @@ export const DEFAULT_PLACEHOLDER = "Type something...";
 
 export const DEFAULT_TOOLSET_PLACEHOLDER = "Used as a tool";
 
+export const PLAYGROUND_BUTTON_NAME = "Playground";
 export const POLLING_MESSAGES = {
   ENDPOINT_NOT_AVAILABLE: "Endpoint not available",
   STREAMING_NOT_SUPPORTED: "Streaming not supported",
 } as const;
 
-export const POLLING_INTERVAL = 100; // milliseconds between polling attempts
+export const POLLING_INTERVAL = 100;
+
+export const IS_AUTO_LOGIN =
+  !process?.env?.LANGFLOW_AUTO_LOGIN ||
+  String(process?.env?.LANGFLOW_AUTO_LOGIN)?.toLowerCase() !== "false";
+
+export const AUTO_LOGIN_RETRY_DELAY = 2000;
+export const AUTO_LOGIN_MAX_RETRY_DELAY = 60000;

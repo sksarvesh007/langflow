@@ -1,4 +1,4 @@
-import { LANGFLOW_ACCESS_TOKEN } from "@/constants/constants";
+import { IS_AUTO_LOGIN, LANGFLOW_ACCESS_TOKEN } from "@/constants/constants";
 import { useCustomApiHeaders } from "@/customization/hooks/use-custom-api-headers";
 import useAuthStore from "@/stores/authStore";
 import { useUtilityStore } from "@/stores/utilityStore";
@@ -65,9 +65,12 @@ function ApiInterceptor() {
         const isAuthenticationError =
           error?.response?.status === 403 || error?.response?.status === 401;
 
-        if (isAuthenticationError) {
+        if (isAuthenticationError && !IS_AUTO_LOGIN) {
           if (autoLogin !== undefined && !autoLogin) {
-            if (error?.config?.url?.includes("github")) {
+            if (
+              error?.config?.url?.includes("github") ||
+              error?.config?.url?.includes("public")
+            ) {
               return Promise.reject(error);
             }
             const stillRefresh = checkErrorCount();
