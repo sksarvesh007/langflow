@@ -10,6 +10,7 @@ class LoopComponent(Component):
     )
     icon = "infinity"
     legacy = True
+
     inputs = [
         DataInput(
             name="data",
@@ -84,6 +85,7 @@ class LoopComponent(Component):
         if self.evaluate_stop_loop():
             self.stop("item")
             self.start("done")
+
             return self.ctx.get(f"{self._id}_aggregated", [])
         self.stop("done")
         return Data(text="")
@@ -103,10 +105,8 @@ class LoopComponent(Component):
         data_list = self.ctx.get(f"{self._id}_data", [])
         aggregated = self.ctx.get(f"{self._id}_aggregated", [])
 
-        # Get the loop input value from the vertex's output names
-        if hasattr(self, "_vertex"):
-            loop_input = self._vertex.get_value_from_output_names("item")
-            if loop_input is not None and not isinstance(loop_input, str) and len(aggregated) <= len(data_list):
-                aggregated.append(loop_input)
-                self.update_ctx({f"{self._id}_aggregated": aggregated})
+        # Check if loop input is provided and append to aggregated list
+        if self.data is not None and not isinstance(self.data, str) and len(aggregated) <= len(data_list):
+            aggregated.append(self.data)
+            self.update_ctx({f"{self._id}_aggregated": aggregated})
         return aggregated
