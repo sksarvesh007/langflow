@@ -1187,7 +1187,7 @@ class Component(CustomComponent):
             {
                 "name": tool.name,
                 "description": tool.description,
-                "tags": tool.tags,
+                "tags": tool.tags if hasattr(tool, "tags") and tool.tags else [tool.name],
                 "status": True,  # Initialize all tools with status True
             }
             for tool in tools
