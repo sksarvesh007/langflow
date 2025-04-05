@@ -10,7 +10,7 @@ class CohereRerankComponent(LCCompressorComponent):
     description = "Rerank documents using the Cohere API."
     name = "CohereRerank"
     icon = "Cohere"
-
+    
     inputs = [
         *LCCompressorComponent.inputs,
         SecretStrInput(

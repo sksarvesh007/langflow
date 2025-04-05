@@ -6,7 +6,7 @@ from langflow.schema import Data
 
 class CustomComponent(Component):
     display_name = "Custom Component"
-    description = "I have made some changes to this component."
+    description = "I have made changes to this component."
     documentation: str = "https://docs.langflow.org/components-custom-components"
     icon = "code"
     name = "CustomComponent"
